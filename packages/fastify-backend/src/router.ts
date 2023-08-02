@@ -6,3 +6,5 @@ const publicProcedure = t.procedure;
 export const appRouter = t.router({
 	hello: publicProcedure.query(() => 'Hello World'),
 });
+
+export type AppRouter = typeof appRouter;
