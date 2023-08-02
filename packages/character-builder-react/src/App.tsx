@@ -7,6 +7,7 @@ import { trpc } from './utils/trpc';
 import { httpBatchLink } from '@trpc/client';
 import IndexPage from './pages/IndexPage';
 import CharacterDisplay from './components/CharacterDisplay';
+import CharacterInputForm from './components/CharacterInputForm';
 
 function App() {
 	const [count, setCount] = useState(0);
@@ -29,6 +30,7 @@ function App() {
 			<QueryClientProvider client={queryClient}>
 				{/* <IndexPage /> */}
 				<CharacterDisplay />
+				<CharacterInputForm />
 			</QueryClientProvider>
 		</trpc.Provider>
 	);
