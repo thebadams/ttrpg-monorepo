@@ -8,7 +8,11 @@ export default function IndexPage() {
 	return (
 		<div>
 			<p>{helloQuery?.data || 'No Data'}</p>
-			{classesQuery.data?.map((item) => <p>{item.name}</p>)}
+			{classesQuery.data?.map((item) => (
+				<p>
+					{item.name} || {item.baseHP.toLocaleString()}
+				</p>
+			))}
 		</div>
 	);
 }

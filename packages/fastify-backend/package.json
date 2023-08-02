@@ -23,6 +23,7 @@
 	"scripts": {
 		"start": "ts-node-dev src/index.ts",
 		"db:migrate": "prisma migrate dev",
-		"db:seed": "ts-node prisma/seed.ts"
+		"db:seed": "ts-node prisma/seed.ts",
+		"db:generate": "prisma generate"
 	}
 }
