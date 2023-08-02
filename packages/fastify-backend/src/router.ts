@@ -1,14 +1,15 @@
 import { initTRPC } from '@trpc/server';
 import { z } from 'zod';
 import { prisma } from './prisma';
+import { Context } from './context';
 
-export const t = initTRPC.create();
+export const t = initTRPC.context<Context>().create();
 const publicProcedure = t.procedure;
 export const appRouter = t.router({
 	hello: publicProcedure.query(() => 'Hello World'),
-	allClasses: publicProcedure.query(async () => {
+	allClasses: publicProcedure.query(async ({ ctx }) => {
 		try {
-			const classes = await prisma.class.findMany({});
+			const classes = await ctx.prisma.class.findMany({});
 			return classes;
 		} catch (error) {
 			console.error(error);
