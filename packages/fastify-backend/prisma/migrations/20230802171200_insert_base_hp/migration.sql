@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Class" ADD COLUMN     "baseHP" INTEGER NOT NULL DEFAULT 7;

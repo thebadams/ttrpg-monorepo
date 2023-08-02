@@ -13,4 +13,5 @@ datasource db {
 model Class {
   id Int @id@default(autoincrement())
   name String
+  baseHP Int @default(7)
 }
