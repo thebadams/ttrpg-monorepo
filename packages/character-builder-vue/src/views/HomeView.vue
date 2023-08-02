@@ -4,6 +4,8 @@ import TheWelcome from '../components/TheWelcome.vue'
 
 <template>
   <main>
-    <TheWelcome />
+    <h1>13th Age Character</h1>
+    <h2>Valar the Oathsmith</h2>
+    <p>Created By Brian Adams</p>
   </main>
 </template>
