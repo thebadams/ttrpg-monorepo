@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { trpc } from './utils/trpc';
 import { httpBatchLink } from '@trpc/client';
 import IndexPage from './pages/IndexPage';
+import CharacterDisplay from './components/CharacterDisplay';
 
 function App() {
 	const [count, setCount] = useState(0);
@@ -26,7 +27,8 @@ function App() {
 	return (
 		<trpc.Provider client={trpcClient} queryClient={queryClient}>
 			<QueryClientProvider client={queryClient}>
-				<IndexPage />
+				{/* <IndexPage /> */}
+				<CharacterDisplay />
 			</QueryClientProvider>
 		</trpc.Provider>
 	);
