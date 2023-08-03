@@ -11,7 +11,43 @@ datasource db {
 }
 
 model Class {
+  id     Int    @id @default(autoincrement())
+  name   String @unique
+  baseHP Int    @default(7)
+  bonuses Abilities[]
+  armors ArmorClasses[]
+
+}
+
+enum Abilities {
+  STR
+  DEX
+  CON
+  INT
+  WIS
+  CHA
+
+}
+
+enum ArmorTypes {
+  NONE
+  LIGHT
+  HEAVY
+  SHIELD
+}
+
+model Armor {
   id Int @id@default(autoincrement())
-  name String
-  baseHP Int @default(7)
+  type ArmorTypes
+  baseAC Int
+  atkPenalty Int
+  classes ArmorClasses[]
+}
+
+model ArmorClasses {
+  armor Armor @relation(fields: [armorID], references: [id])
+  armorID Int
+  class Class @relation(fields: [classID], references: [id])
+  classID Int
+  @@id([armorID, classID])
 }
