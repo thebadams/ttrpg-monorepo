@@ -15,7 +15,7 @@ model Class {
   name   String @unique
   baseHP Int    @default(7)
   bonuses Abilities[]
-  armors ArmorClasses[]
+  armors Armor[]
 
 }
 
@@ -41,13 +41,14 @@ model Armor {
   type ArmorTypes
   baseAC Int
   atkPenalty Int
-  classes ArmorClasses[]
+  classes Class[]
+  @@unique([type, baseAC, atkPenalty])
 }
 
-model ArmorClasses {
-  armor Armor @relation(fields: [armorID], references: [id])
-  armorID Int
-  class Class @relation(fields: [classID], references: [id])
-  classID Int
-  @@id([armorID, classID])
-}
+// model ArmorClasses {
+//   armor Armor @relation(fields: [armorID], references: [id])
+//   armorID Int
+//   class Class @relation(fields: [classID], references: [id])
+//   classID Int
+//   @@id([armorID, classID])
+// }
