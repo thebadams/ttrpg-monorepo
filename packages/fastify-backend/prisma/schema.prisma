@@ -16,6 +16,7 @@ model Class {
   baseHP Int    @default(7)
   bonuses Abilities[]
   armors Armor[]
+  features Feature[]
 
 }
 
@@ -52,3 +53,16 @@ model Armor {
 //   classID Int
 //   @@id([armorID, classID])
 // }
+
+enum FeatureTypes {
+  CLASS
+}
+
+model Feature {
+  id Int @id@default(autoincrement())
+  name String @unique()
+  description Json
+  type FeatureTypes
+  class Class? @relation(fields: [classID], references: [id])
+  classID Int?
+}

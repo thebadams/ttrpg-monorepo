@@ -1,0 +1,34 @@
+[
+	{
+		"name": "Cantrips",
+		"description": {
+			"data": "Every wizard can cast a handful of cantrips each day. You don’t have to memorize or choose them beforehand, you just cast them on the fly.\nWizards can cast a number of cantrips equal to their Intelligence modifier each battle. Each cantrip takes a standard action to cast as a ranged spell. Outside of battle, a wizard can cast about three to six cantrips every five minutes. The Cantrip Mastery talent speeds up cantrip casting.\nAt the adventurer tier (levels 1–4), cantrips with a standard duration last 10–60 minutes, plus 10 minutes per wizard level. The GM rolls and the wizard becomes aware that their cantrip is about to end a couple minutes before it’s done.\nAt the champion tier, levels 5–7, most cantrips last 1–6 hours.\nAt the epic tier, levels 8–10, cantrips last between 2–12 hours.\nFor a list of available cantrips, see Cantrips."
+		},
+		"type": "CLASS",
+		"class": "Wizard"
+	},
+	{
+		"name": "Cyclic Spells",
+		"description": {
+			"data": "Spells that have a cyclic usage can always be cast at least once per battle, and are only expended in that battle if they are cast when the escalation die is 0 or odd. In other words, if you cast a cyclic spell like color spray or rebuke when the escalation die is even, the spell is not expended and can still be cast later in the battle."
+		},
+		"type": "CLASS",
+		"class": "Wizard"
+	},
+	{
+		"name": "Otherworld Advantage",
+		"description": {
+			"data": "Wizardly magic taps into the power of the overworld. While a wizard is in the overworld, their daily spells become recharge 16+ after battle."
+		},
+		"type": "CLASS",
+		"class": "Wizard"
+	},
+	{
+		"name": "Ritual Magic",
+		"description": {
+			"data": "Wizards can cast their spells as rituals"
+		},
+		"type": "CLASS",
+		"class": "Wizard"
+	}
+]
