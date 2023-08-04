@@ -1,0 +1,30 @@
+[
+	{ "name": "Barbarian", "baseHP": 7, "bonuses": ["STR", "CON"] },
+	{ "name": "Bard", "baseHP": 7, "bonuses": ["DEX", "CHA"] },
+	{ "name": "Chaos Mage", "baseHP": 6, "bonuses": ["INT", "CHA"] },
+	{ "name": "Cleric", "baseHP": 7, "bonuses": ["WIS", "STR"] },
+	{ "name": "Commander", "baseHP": 7, "bonuses": ["STR", "CHA"] },
+	{
+		"name": "Demonologist",
+		"baseHP": 6,
+		"bonuses": ["CON", "CHA"]
+	},
+	{
+		"name": "Druid",
+		"baseHP": 6,
+		"bonuses": ["STR", "DEX", "WIS"]
+	},
+	{ "name": "Fighter", "baseHP": 8, "bonuses": ["STR", "CON"] },
+	{
+		"name": "Monk",
+		"baseHP": 7,
+		"bonuses": ["STR", "DEX", "WIS"]
+	},
+	{ "name": "Necromancer", "baseHP": 6, "bonuses": ["INT", "CHA"] },
+	{ "name": "Occultist", "baseHP": 6, "bonuses": ["INT", "WIS"] },
+	{ "name": "Paladin", "baseHP": 8, "bonuses": ["STR", "CHA"] },
+	{ "name": "Ranger", "baseHP": 7, "bonuses": ["DEX", "STR"] },
+	{ "name": "Rogue", "baseHP": 6, "bonuses": ["DEX", "CHA"] },
+	{ "name": "Sorcerer", "baseHP": 6, "bonuses": ["CHA", "CON"] },
+	{ "name": "Wizard", "baseHP": 6, "bonuses": ["INT", "WIS"] }
+]

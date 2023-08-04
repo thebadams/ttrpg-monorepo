@@ -11,13 +11,12 @@ datasource db {
 }
 
 model Class {
-  id     Int    @id @default(autoincrement())
-  name   String @unique
-  baseHP Int    @default(7)
-  bonuses Abilities[]
-  armors Armor[]
+  id       Int         @id @default(autoincrement())
+  name     String      @unique
+  baseHP   Int         @default(7)
+  bonuses  Abilities[]
+  armors   Armor[]
   features Feature[]
-
 }
 
 enum Abilities {
@@ -27,7 +26,6 @@ enum Abilities {
   INT
   WIS
   CHA
-
 }
 
 enum ArmorTypes {
@@ -38,11 +36,12 @@ enum ArmorTypes {
 }
 
 model Armor {
-  id Int @id@default(autoincrement())
-  type ArmorTypes
-  baseAC Int
+  id         Int        @id @default(autoincrement())
+  type       ArmorTypes
+  baseAC     Int
   atkPenalty Int
-  classes Class[]
+  classes    Class[]
+
   @@unique([type, baseAC, atkPenalty])
 }
 
@@ -59,10 +58,24 @@ enum FeatureTypes {
 }
 
 model Feature {
-  id Int @id@default(autoincrement())
-  name String @unique()
+  id          Int          @id @default(autoincrement())
+  name        String       @unique()
   description Json
-  type FeatureTypes
-  class Class? @relation(fields: [classID], references: [id])
-  classID Int?
+  type        FeatureTypes
+  talent      Boolean      @default(false)
+  class       Class?       @relation(fields: [classID], references: [id])
+  classID     Int?
+}
+
+enum FeatLevels {
+  ADVENTURER
+  EPIC
+  CHAMPION
+}
+
+model Feat {
+  id          Int        @id @default(autoincrement())
+  name        String?
+  level       FeatLevels
+  description String
 }
