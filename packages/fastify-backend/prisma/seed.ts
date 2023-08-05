@@ -46,10 +46,30 @@ async function seedArmors() {
 	console.log(created);
 }
 
+async function connectClassesToArmors() {
+	const classes = await readClassData();
+	classes.forEach(async (c) => {
+		const updated = await prisma.class.update({
+			where: { name: c.name },
+			data: {
+				armors: {
+					connect: c.armors.map((a) => {
+						return {
+							type_baseAC_atkPenalty: a,
+						};
+					}),
+				},
+			},
+		});
+		console.log(updated);
+	});
+}
+
 async function main() {
 	try {
 		await seedClasses();
 		await seedArmors();
+		await connectClassesToArmors();
 		console.log('SUCCESS');
 	} catch (e) {
 		console.error(e);
