@@ -3,6 +3,13 @@ import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
 import { appRouter } from './router';
 import cors from '@fastify/cors';
 import { createContext } from './context';
+const HOST = 'RENDER' in process.env ? '0.0.0.0' : 'localhost';
+let PORT: number;
+if (process.env.PORT) {
+	PORT = parseInt(process.env.PORT);
+} else {
+	PORT = 8000;
+}
 const server = fastify({
 	maxParamLength: 5000,
 	logger: true,
@@ -17,7 +24,7 @@ server.register(fastifyTRPCPlugin, {
 
 export async function main() {
 	try {
-		await server.listen({ port: 8000 });
+		await server.listen({ host: HOST, port: PORT });
 	} catch (err) {
 		console.error(err);
 		process.exit(1);
