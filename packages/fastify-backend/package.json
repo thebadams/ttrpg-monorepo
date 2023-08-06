@@ -23,7 +23,7 @@
 	"scripts": {
 		"start": "yarn build && node dist/index.js",
 		"dev": "ts-node-dev src/index.ts",
-		"build": "tsc | yarn db:generate",
+		"build": " yarn && tsc | yarn db:generate",
 		"db:migrate": "prisma migrate dev",
 		"db:seed": "prisma db seed",
 		"db:generate": "prisma generate"
