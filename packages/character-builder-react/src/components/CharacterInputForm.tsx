@@ -9,11 +9,15 @@ import {
 	playerAtom,
 	wisdomAtom,
 	strengthAtom,
+	classAtom,
 } from '../state/currentCharacter';
+import { trpc } from '../utils/trpc';
 
 export default function CharacterInputForm() {
+	const classNameQuery = trpc.classNames.useQuery();
 	const [_name, setName] = useAtom(nameAtom);
 	const [_playerName, setPlayerName] = useAtom(playerAtom);
+	const [class_, setClass] = useAtom(classAtom);
 	const [level, setLevel] = useAtom(levelAtom);
 	const [strength, setStrength] = useAtom(strengthAtom);
 	const [dexterity, setDexterity] = useAtom(dexterityAtom);
@@ -43,6 +47,29 @@ export default function CharacterInputForm() {
 					setPlayerName(e.target.value);
 				}}
 			/>
+			<br />
+			<hr />
+			<label htmlFor="class">CLASS || </label>
+			<select
+				name="class"
+				onChange={(e) => {
+					setClass(e.target.value);
+				}}
+			>
+				{classNameQuery.data?.map((c) =>
+					c.name === class_ ? (
+						<option selected value={c.name}>
+							{c.name}
+						</option>
+					) : (
+						<option value={c.name}>{c.name}</option> || (
+							<option selected value="loading">
+								Loading...
+							</option>
+						)
+					)
+				)}
+			</select>
 			<br />
 			<hr />
 			<label htmlFor="level">CHARACTER LEVEL || </label>
