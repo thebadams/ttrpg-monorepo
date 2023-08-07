@@ -1,7 +1,7 @@
 import { initTRPC } from '@trpc/server';
 import { z } from 'zod';
-import { prisma } from './prisma';
-import { Context } from './context';
+import { prisma } from './prisma.js';
+import { Context } from './context.js';
 
 export const t = initTRPC.context<Context>().create();
 const publicProcedure = t.procedure;
