@@ -23,6 +23,13 @@ server.register(fastifyTRPCPlugin, {
 	trpcOptions: { router: appRouter, createContext },
 });
 
+server.get('/', (req, res) => {
+	res.redirect('./app');
+});
+
+server.get('/app', (req, res) => {
+	res.redirect('http://localhost:5173');
+});
 export async function main() {
 	try {
 		await server.listen({ host: HOST, port: PORT });
