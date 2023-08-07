@@ -18,6 +18,19 @@ export const appRouter = t.router({
 			return [];
 		}
 	}),
+	classNames: publicProcedure.query(async ({ ctx }) => {
+		try {
+			const classNames = await ctx.prisma.class.findMany({
+				select: {
+					name: true,
+				},
+			});
+			return classNames;
+		} catch (error) {
+			console.error(error);
+			return [];
+		}
+	}),
 });
 
 export type AppRouter = typeof appRouter;

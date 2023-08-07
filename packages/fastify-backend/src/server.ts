@@ -1,4 +1,4 @@
-import fastify from 'fastify';
+import Fastify from 'fastify';
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
 import { appRouter } from './router.js';
 import cors from '@fastify/cors';
@@ -10,7 +10,7 @@ if (process.env.PORT) {
 } else {
 	PORT = 8000;
 }
-const server = fastify({
+const server = Fastify({
 	maxParamLength: 5000,
 	logger: true,
 });
