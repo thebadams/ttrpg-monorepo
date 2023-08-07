@@ -3,6 +3,7 @@ import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
 import { appRouter } from './router.js';
 import cors from '@fastify/cors';
 import { createContext } from './context.js';
+
 const HOST = 'RENDER' in process.env ? '0.0.0.0' : 'localhost';
 let PORT: number;
 if (process.env.PORT) {
